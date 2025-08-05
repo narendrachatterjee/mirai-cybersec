@@ -1,0 +1,266 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cybersecurity Design System - Dark theme with neon accents */
+
+@layer base {
+  :root {
+    /* SentinelOne-inspired Purple Theme */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Purple Primary - SentinelOne style */
+    --primary: 266 100% 65%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 266 100% 75%;
+    --primary-dark: 266 100% 55%;
+
+    /* Complementary Purple Secondary */
+    --secondary: 280 100% 70%;
+    --secondary-foreground: 0 0% 98%;
+
+    /* Muted grays for subtle elements */
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    /* Accent purple variations */
+    --accent: 270 100% 80%;
+    --accent-foreground: 240 10% 3.9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 266 100% 65%;
+
+    --radius: 0.75rem;
+
+    /* SentinelOne-style gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(266 100% 65%), hsl(280 100% 70%));
+    --gradient-secondary: linear-gradient(135deg, hsl(280 100% 70%), hsl(290 100% 75%));
+    --gradient-hero: linear-gradient(135deg, hsl(240 10% 3.9%), hsl(250 15% 8%));
+    --gradient-card: linear-gradient(135deg, hsl(240 10% 3.9%), hsl(245 10% 6%));
+    --gradient-interactive: linear-gradient(135deg, hsl(266 100% 65%), hsl(270 100% 80%));
+    
+    /* Purple glow effects */
+    --glow-primary: 0 0 30px hsl(266 100% 65% / 0.4);
+    --glow-secondary: 0 0 30px hsl(280 100% 70% / 0.4);
+    --glow-accent: 0 0 30px hsl(270 100% 80% / 0.4);
+    --glow-hover: 0 0 40px hsl(266 100% 65% / 0.6);
+
+    /* Enhanced animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glow: box-shadow 0.3s ease, transform 0.3s ease;
+    --transition-scale: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Sidebar variables */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+  }
+}
+
+@layer components {
+  /* Hero gradient background */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  /* Card gradient background */
+  .card-gradient {
+    background: var(--gradient-card);
+    border: 1px solid hsl(266 100% 65% / 0.2);
+  }
+
+  /* Interactive card hover effects */
+  .card-interactive {
+    background: var(--gradient-card);
+    border: 1px solid hsl(266 100% 65% / 0.2);
+    transition: var(--transition-glow);
+    cursor: pointer;
+  }
+
+  .card-interactive:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--glow-primary);
+    border-color: hsl(266 100% 65% / 0.5);
+  }
+
+  /* Purple glow effects */
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+
+  .glow-secondary {
+    box-shadow: var(--glow-secondary);
+  }
+
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+
+  /* Enhanced hover glow animations */
+  .hover-glow-primary {
+    transition: var(--transition-glow);
+  }
+
+  .hover-glow-primary:hover {
+    box-shadow: var(--glow-hover);
+    transform: translateY(-2px);
+  }
+
+  .hover-glow-secondary:hover {
+    box-shadow: var(--glow-secondary);
+    transform: translateY(-2px);
+  }
+
+  /* Interactive button effects */
+  .btn-interactive {
+    background: var(--gradient-primary);
+    transition: var(--transition-glow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-interactive:hover {
+    box-shadow: var(--glow-hover);
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  .btn-interactive::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .btn-interactive:hover::before {
+    left: 100%;
+  }
+
+  /* SentinelOne-style text effects */
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .text-gradient-secondary {
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Interactive animated underlines */
+  .animated-underline {
+    position: relative;
+  }
+
+  .animated-underline::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: bottom right;
+  }
+
+  .animated-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  /* Floating animation elements */
+  .floating-element {
+    animation: float-gentle 6s ease-in-out infinite;
+  }
+
+  .floating-element-delayed {
+    animation: float-gentle 6s ease-in-out infinite 2s;
+  }
+
+  /* Interactive icon containers */
+  .icon-interactive {
+    transition: var(--transition-glow);
+    border-radius: 50%;
+    position: relative;
+  }
+
+  .icon-interactive:hover {
+    transform: rotate(10deg) scale(1.1);
+    box-shadow: var(--glow-primary);
+  }
+}
