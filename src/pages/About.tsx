@@ -28,16 +28,10 @@ const About = () => {
 
   const team = [
     {
-      name: 'Aditya Singh',
-      role: 'CTO & Founder',
-      specialization: 'Cybersecurity Expert',
-      experience: '3+ years in enterprise security',
-    },
-    {
       name: 'Narendra Chatterjee',
       role: 'CTO & Co-Founder',
       specialization: 'AI-ML Expert',
-      experience: '4+ years in AI-driven security solutions',
+      experience: '4+ years in AI/ML-driven security solutions',
     }
   ];
 
@@ -140,7 +134,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-8">
             {team.map((member, index) => (
               <Card key={index} className="card-gradient border-border hover-glow-secondary group cursor-pointer transition-all duration-300">
                 <CardContent className="p-6 text-center">
